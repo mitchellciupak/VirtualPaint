@@ -8,7 +8,7 @@
 + [Acknowledgements](#acknowledgements)
 
 ## About <a name = "about"></a>
-A simple python application written in openCV that lets you paint a picture with a paintbrush, your fingers, or a folded postit note.
+A simple python application is written in OpenCV that lets you paint a picture with a paintbrush, your fingers, or a folded post-it note.
 
 ## Getting Started <a name = "getting_started"></a>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
