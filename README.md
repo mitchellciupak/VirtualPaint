@@ -30,8 +30,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Calibration
 ![Calibration 1](./bRoll/colorCalibration.JPG)
-![Calibration 2](./bRoll/colorCalibration2.JPG)
-![Calibration 3](./bRoll/colorCalibration3.JPG)
+![Calibration 2](./bRoll/colorCalibration2.jpg)
+![Calibration 3](./bRoll/colorCalibration3.jpg)
 
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
