@@ -3,7 +3,7 @@ import cv2
 def detectFaces(imgPath):
 
     # Using OpenCV Cascades
-    faceCascades = cv2.CascadeClassifier("Resources/haarsascade_frontalface_default.xml")
+    faceCascades = cv2.CascadeClassifier("bRoll/haarsascade_frontalface_default.xml")
 
     img = cv2.imread(imgPath)
     img_gray = cv2.cvtColor(img, cv2.COLOR_BG2GRAY)

@@ -1,6 +1,18 @@
 import cv2
 import numpy as np
 
+# Macros
+FRAME_WIDTH = 640
+FRAME_HEIGHT = 480
+
+"""
+Instructions:
+    1. Hold desired color to camera
+    2. Adjust knops on TrackBars until all but the object holding the color is black
+    3. Copy down values like (HueMin, HueMax, SatMin, SatMax, ValMin, ValMax)
+    4. press 'q' to exit
+"""
+
 def empty(arg):
     pass
 
@@ -17,7 +29,6 @@ def colorDetection(img):
     cv2.createTrackbar("Val Max", "TrackBars", 255, 255, empty)
 
     while True:
-        img = cv2.imread(imgPath)
         imgHSV = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
         hue_min = cv2.getTrackbarPos("Hue Min","TrackBars")
@@ -33,8 +44,21 @@ def colorDetection(img):
         mask = cv2.inRange(imgHSV,lower,upper) #color that you want as white and everything else as white
         imgResults = cv2.bitwise_and(img,img,mask=mask)
 
-        cv2.imshow("Orig Output", img)
-        cv2.imshow("HSV Output", imgHSV)
-        cv2.imshow("Mask Output", mask)
-        cv2.imshow("Results", imgResults)
-        cv2.waitkey(1)
+        cv2.imshow("Mask (All black but the color)", mask)
+        cv2.imshow("Results (Only color visable)", imgResults)
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+if __name__ == "__main__":
+
+    #Read in first image from cap
+    cap = cv2.VideoCapture(0)
+    cap.set(3, FRAME_WIDTH)
+    cap.set(4, FRAME_HEIGHT)
+    cap.set(propId=10, value=150)  # brightness
+
+    isValid, img = cap.read()
+
+    colorDetection(img)
+
