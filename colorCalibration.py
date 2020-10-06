@@ -8,9 +8,13 @@ FRAME_HEIGHT = 480
 """
 Instructions:
     1. Hold desired color to camera
-    2. Adjust knops on TrackBars until all but the object holding the color is black
-    3. Copy down values like (HueMin, HueMax, SatMin, SatMax, ValMin, ValMax)
+    2. Run colorCalibration.py
+    2. Adjust the bars on TrackBars until all but the object holding the color is black
+        - Note: It is best to get as tight of a bound as possible, so adjust bars as close to non-recognition as possible
+    3. Copy down values like [HueMin, SatMin, ValMin, HueMax, SatMax, ValMax]
+    4. Update each new color as an array to myColors in ./virtualPaint.py
     4. press 'q' to exit
+    5. repeat for new colors
 """
 
 def empty(arg):
@@ -22,10 +26,10 @@ def colorDetection(img):
     cv2.namedWindow("TrackBars")
     cv2.resizeWindow("TrackBars", 640, 240)
     cv2.createTrackbar("Hue Min", "TrackBars", 0, 179, empty)
-    cv2.createTrackbar("Hue Max", "TrackBars", 179, 179, empty)
     cv2.createTrackbar("Sat Min", "TrackBars", 0, 255, empty)
-    cv2.createTrackbar("Sat Max", "TrackBars", 255, 255, empty)
     cv2.createTrackbar("Val Min", "TrackBars", 0, 255, empty)
+    cv2.createTrackbar("Hue Max", "TrackBars", 179, 179, empty)
+    cv2.createTrackbar("Sat Max", "TrackBars", 255, 255, empty)
     cv2.createTrackbar("Val Max", "TrackBars", 255, 255, empty)
 
     while True:
