@@ -33,6 +33,7 @@ These instructions will get you a copy of the project up and running on your loc
 ![Calibration 2](./bRoll/colorCalibration2.jpg)
 ![Calibration 3](./bRoll/colorCalibration3.jpg)
 
+### Update values and have fun drawing!
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 [Murtaza's Workshop - OpenCV](https://www.youtube.com/watch?v=WQeoO7MI0Bs&list=WL&index=28)
